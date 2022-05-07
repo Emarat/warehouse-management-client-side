@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <Navbar sticky='top' bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={Link} to="home#home">
                     <img
                         alt=""
                         src={logo}
