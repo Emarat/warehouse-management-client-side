@@ -10,23 +10,26 @@ const Item = ({ item }) => {
         navigate(`/inventory/${_id}`)
     }
     return (
-        <Card className='mt-4 ms-5' style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={image} />
-            <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                    Description: {description}
-                </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-                <ListGroupItem>Supplier: {supplier}</ListGroupItem>
-                <ListGroupItem>Price: {price}</ListGroupItem>
-                <ListGroupItem>Qty: {quantity}</ListGroupItem>
-            </ListGroup>
-            <Card.Body className='text-center'>
-                <button onClick={() => navigateToInventoryPage(_id)} type="button" className="btn btn-primary">UPDATE</button>
-            </Card.Body>
-        </Card>
+        <>
+            <Card className='mt-4 ms-5' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={image} />
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Text>
+                        Description: {description}
+                    </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem>Supplier: {supplier}</ListGroupItem>
+                    <ListGroupItem>Price: {price}</ListGroupItem>
+                    <ListGroupItem>Qty: {quantity}</ListGroupItem>
+                </ListGroup>
+                <Card.Body className='text-center'>
+                    <button onClick={() => navigateToInventoryPage(_id)} type="button" className="btn btn-primary">UPDATE</button>
+                </Card.Body>
+            </Card>
+
+        </>
     );
 };
 

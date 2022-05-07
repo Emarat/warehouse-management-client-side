@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
+import ManageInventory from './Components/Manage Inventory/ManageInventory';
 import Register from './Components/Register/Register';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 
@@ -21,6 +22,7 @@ function App() {
           </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/manageinventories' element={<ManageInventory></ManageInventory>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

@@ -72,7 +72,7 @@ const Inventory = () => {
                             <button onClick={Delivered} type="button" className="btn btn-primary">DELIVERED</button>
                         </div>
                         <div className='d-flex mx-auto'>
-                            <input style={{ width: '50px' }} type="text" className="form-control" id="input" />
+                            <input style={{ width: '50px' }} type="text" className="form-control" id="input" placeholder='Qty' />
                             <button onClick={Restock} type="button" className="btn btn-primary ms-3">RESTOCK</button>
                         </div>
                     </div>

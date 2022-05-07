@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Item from '../Item/Item';
 
 const Items = () => {
@@ -20,6 +21,9 @@ const Items = () => {
 
                     </Item>)
                 }
+            </div>
+            <div className='text-center mt-3'>
+                <Link to='/manageinventories' type="button" className="btn btn-primary btn-lg">MANAGE INVENTORIES</Link>
             </div>
         </div>
     );
