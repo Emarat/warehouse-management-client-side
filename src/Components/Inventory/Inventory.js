@@ -3,17 +3,36 @@ import { Image } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const Inventory = () => {
-    const { inventoryId } = useParams();
+    const { id } = useParams();
     const [item, setItem] = useState({});
+    const [Refresh, setRefresh] = React.useState(false);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/fruit/${inventoryId}`)
+        fetch(`http://localhost:5000/fruit/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
-    }, [])
+    }, [Refresh])
 
-
+    const Delivered = () => {
+        const quantity = item.quantity - 1;
+        const updateQty = { quantity };
+        console.log(quantity);
+        const url = `http://localhost:5000/fruit/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQty)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+        // window.location.reload(false);
+        setRefresh(!Refresh)
+    };
 
     return (
         <div className='container mt-5'>
@@ -27,7 +46,7 @@ const Inventory = () => {
                     <p>Quantity: <small>{item.quantity}</small> </p>
                     <p>Price: <small>{item.price}</small> </p>
                     <div className='text-center'>
-                        <button type="button" className="btn btn-primary">DELIVERED</button>
+                        <button onClick={Delivered} type="button" className="btn btn-primary">DELIVERED</button>
                     </div>
                 </div>
             </div>
