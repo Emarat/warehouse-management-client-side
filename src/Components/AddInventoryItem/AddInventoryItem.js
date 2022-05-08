@@ -5,7 +5,7 @@ const AddInventoryItem = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/fruit`;
+        const url = `https://enigmatic-plateau-73534.herokuapp.com/fruit`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -9,7 +9,7 @@ const Inventory = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/fruit/${id}`)
+        fetch(`https://enigmatic-plateau-73534.herokuapp.com/fruit/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [Refresh])
@@ -18,7 +18,7 @@ const Inventory = () => {
         const quantity = item.quantity - 1;
         const updateQty = { quantity };
         console.log(quantity);
-        const url = `http://localhost:5000/fruit/${id}`;
+        const url = `https://enigmatic-plateau-73534.herokuapp.com/fruit/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -40,7 +40,7 @@ const Inventory = () => {
         const quantity = item.quantity + inputValue;
         const updateQty = { quantity };
         console.log(quantity);
-        const url = `http://localhost:5000/fruit/${id}`;
+        const url = `https://enigmatic-plateau-73534.herokuapp.com/fruit/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

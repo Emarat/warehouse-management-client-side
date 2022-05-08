@@ -10,7 +10,7 @@ const ManageInventories = ({ inventory }) => {
         const proceed = window.confirm('Are You Sure You Want To Delete?')
         if (proceed) {
             console.log('Deleting with Id', _id);
-            const url = `http://localhost:5000/fruit/${id}`;
+            const url = `https://enigmatic-plateau-73534.herokuapp.com/fruit/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

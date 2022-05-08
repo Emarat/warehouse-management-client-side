@@ -6,7 +6,7 @@ import ManageInventories from '../Manage Inventories/ManageInventories';
 const ManageInventory = () => {
     const [inventories, setInventory] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/fruit')
+        fetch('https://enigmatic-plateau-73534.herokuapp.com/fruit')
             .then(res => res.json())
             .then(data => setInventory(data))
     }, [])

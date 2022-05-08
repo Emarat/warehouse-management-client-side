@@ -4,7 +4,7 @@ import MyItems from '../MyItems/MyItems';
 const MYITEM = () => {
     const [myitems, setMyItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/fruit')
+        fetch('https://enigmatic-plateau-73534.herokuapp.com/fruit')
             .then(res => res.json())
             .then(data => setMyItems(data))
     }, [])
