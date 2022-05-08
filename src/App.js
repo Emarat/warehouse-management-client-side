@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import Inventory from './Components/Inventory/Inventory';
 import Login from './Components/Login/Login';
 import ManageInventory from './Components/Manage Inventory/ManageInventory';
+import NotFound from './Components/NotFound/NotFound';
 import Register from './Components/Register/Register';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/manageinventories' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
