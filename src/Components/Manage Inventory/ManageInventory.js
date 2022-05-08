@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ManageInventories from '../Manage Inventories/ManageInventories';
+
 
 const ManageInventory = () => {
     const [inventories, setInventory] = useState([]);
@@ -20,6 +22,9 @@ const ManageInventory = () => {
 
                     </ManageInventories>)
                 }
+            </div>
+            <div className='text-center mt-3'>
+                <Link to='/AddInventoryItem' type="button" className="btn btn-primary btn-lg">ADD NEW ITEM</Link>
             </div>
         </div>
     );

@@ -26,11 +26,21 @@ const Header = () => {
                     />{' '}
                     FRUITS WAREHOUSE
                 </Navbar.Brand>
+                <Nav className="mx-auto">
+                    <Nav.Link as={Link} to="home#home">HOME</Nav.Link>
+                    <Nav.Link as={Link} to="/blog">BLOGS</Nav.Link>
+                </Nav>
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar>
+
                         {
                             user ?
-                                <button onClick={handleSignOut} className="btn btn-outline-light btn-lg">LOGOUT</button>
+                                <Nav>
+                                    <Nav.Link as={Link} to="/AddInventoryItem">ADD ITEM</Nav.Link>
+                                    <Nav.Link as={Link} to="/myitem">MY ITEM</Nav.Link>
+                                    <Nav.Link as={Link} to="/manageinventories">MANAGE ITEM</Nav.Link>
+                                    <button onClick={handleSignOut} className="btn btn-outline-light btn-lg">LOGOUT</button>
+                                </Nav>
                                 :
                                 <Nav.Link as={Link} to="/login">LOGIN</Nav.Link>
                         }
