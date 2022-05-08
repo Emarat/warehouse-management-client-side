@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { } from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const ManageInventories = ({ inventory }) => {
-    const { name, quantity, supplier, image, description, price } = inventory;
+    const { _id, name, quantity, supplier, image, description, price } = inventory;
+
     // console.log(item);
 
-
+    const deleteItem = (id) => {
+        const proceed = window.confirm('Are You Sure You Want To Delete?')
+        if (proceed) {
+            console.log('Deleting with Id', _id);
+            const url = `http://localhost:5000/fruit/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('Deleted');
+                })
+        }
+        window.location.reload(false);
+    };
 
     return (
         <Card className='mt-4 ms-5' style={{ width: '18rem' }}>
@@ -22,7 +37,7 @@ const ManageInventories = ({ inventory }) => {
                 <ListGroupItem>Qty: {quantity}</ListGroupItem>
             </ListGroup>
             <Card.Body className='text-center'>
-                <button type="button" className="btn btn-primary">DELETE</button>
+                <button onClick={() => deleteItem(_id)} type="button" className="btn btn-primary">DELETE</button>
             </Card.Body>
         </Card>
     );
