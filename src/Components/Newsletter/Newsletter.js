@@ -7,8 +7,8 @@ const Newsletter = () => {
                 <div >
                     <div className="container">
                         <h1 >Subscribe To Get The Latest  News About Us </h1>
-                        <p >Get the Latest news about digital Marketing to Your Pocket, drop your email below to
-                            get daliy update about us</p>
+                        <p >Get the Latest news about Our Warehouse to Your Pocket, drop your email below to
+                            get daliy update about us!</p>
 
                         <div>
                             <input type="email" required placeholder="Enter your email address" />
