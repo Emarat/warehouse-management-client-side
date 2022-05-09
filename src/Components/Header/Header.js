@@ -25,11 +25,13 @@ const Header = () => {
                             height="30"
                             className="d-inline-block align-top"
                         />
+                    </Navbar.Brand>
+                    <Navbar.Brand as={Link} to="home#home">
                         FRUITS WAREHOUSE
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
+                        <Nav>
                             <Nav.Link as={Link} to="home#home">HOME</Nav.Link>
                             <Nav.Link as={Link} to="/blog">BLOGS</Nav.Link>
                         </Nav>
