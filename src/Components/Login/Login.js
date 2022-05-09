@@ -15,9 +15,9 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [signInWithGoogle, gUser, gLoading1, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation();

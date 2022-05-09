@@ -9,6 +9,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const [agree, setAgree] = useState(false);
     const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -33,6 +34,10 @@ const Register = () => {
 
     const handleCreateUser = async (event) => {
         event.preventDefault();
+        const agree = event.target.terms.checked;
+        if (agree) {
+            createUserWithEmailAndPassword(email, password);
+        }
         if (password !== confirmPassword) {
             setError('Password Not Matched');
             return;
@@ -83,10 +88,11 @@ const Register = () => {
 
                                         <div className="form-check d-flex justify-content-center mb-5">
                                             <input
+                                                onClick={() => setAgree(!agree)}
                                                 className="form-check-input me-2"
                                                 type="checkbox"
                                                 value=""
-                                                id="form2Example3cg"
+                                                name="terms"
                                             />
                                             <label className="form-check-label">
                                                 I Agree All Statements in Terms of Service!
@@ -94,7 +100,7 @@ const Register = () => {
                                         </div>
                                         <p style={{ color: 'red' }}>{error}</p>
                                         <div>
-                                            <button className="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
+                                            <button disabled={!agree} className="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
                                         </div>
 
                                     </div>
