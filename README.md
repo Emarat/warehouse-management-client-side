@@ -21,7 +21,7 @@ Live Site : https://fruitswarehouse-44b5a.web.app/
 ## Tools & Technology
 
 1. I use Vscode for build this project.
-2. I use some Library & framework like Reacy.js, React-Booystrap And Bootstrap-5.
+2. I use some Library & framework like Reacy.js, React-Bootstrap And Bootstrap-5.
 3. I use node.js for backend
 3. At last host this client side project in Firebase Hosting.
 4. And server Side project in Heroku .
